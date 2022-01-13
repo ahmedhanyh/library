@@ -12,15 +12,6 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-addBookToLibrary('a', 'a', 1, true);
-
 function displayBooks() {
     const booksList = document.querySelector("#books-list");
     booksList.innerHTML = '';
@@ -67,5 +58,3 @@ function getInputtedData() {
 
   return [title, author, pages, read];
 }
-
-displayBooks();
