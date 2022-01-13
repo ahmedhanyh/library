@@ -16,13 +16,26 @@ function displayBooks() {
     const booksList = document.querySelector("#books-list");
     booksList.innerHTML = '';
     
-    myLibrary.forEach(book => {
+    myLibrary.forEach((book, index) => {
         const bookItem = document.createElement('li');
         bookItem.innerHTML = `Title: ${book.title}<br>
                                 Author: ${book.author}<br>
                                 Number of pages: ${book.pages}<br>
-                                Status: ${book.read ? 'Read' : 'Not yet read'}<br>`;
+                                Status: ${book.read ? 'Read' : 'Not yet read'}<br>
+                                <button id="remove-book-btn">REMOVE</button>`;
+        
         bookItem.classList.add("book-item");
+        bookItem.setAttribute("data-location", index);
+
+        bookItem.querySelector("#remove-book-btn")
+          .addEventListener("click", (event) => {
+            const parent = event.target.parentElement;
+
+            const location = parent.dataset.location;
+            myLibrary.splice(location, 1);
+
+            parent.remove();
+          });
         
         booksList.appendChild(bookItem);
     });
