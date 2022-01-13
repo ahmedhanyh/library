@@ -26,9 +26,10 @@ body {
 .book-item {
     background-color: rgb(204, 75, 75);
     border-radius: 4px;
+    padding: 8px;
 }
 
-#new-book-btn, #add-book-btn {
+button, #add-book-btn {
     background-color: rgb(59, 59, 255);
     border-radius: 2px;
     padding: 8px 12px;
