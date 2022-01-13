@@ -1,10 +1,14 @@
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+}
+
+Book.prototype.toggleReadStatus = function() {
+    this.read = !this.read;
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -19,28 +23,20 @@ function displayBooks() {
     myLibrary.forEach((book, index) => {
         const bookItem = document.createElement('li');
         bookItem.innerHTML = `Title: ${book.title}<br>
-                                Author: ${book.author}<br>
-                                Number of pages: ${book.pages}<br>
-                                Status: ${book.read ? 'Read' : 'Not yet read'}<br>
-                                <button id="remove-book-btn">REMOVE</button>`;
+                              Author: ${book.author}<br>
+                              Number of pages: ${book.pages}<br>
+                              Status: ${book.read ? 'Read' : 'Not yet read'}<br>
+                              <button id="remove-book-btn">REMOVE</button>
+                              <button id="toggle-book-btn">TOGGLE READ</button>`;
         
         bookItem.classList.add("book-item");
         bookItem.setAttribute("data-location", index);
 
-        bookItem.querySelector("#remove-book-btn")
-          .addEventListener("click", (event) => {
-            const parent = event.target.parentElement;
-
-            const location = parent.dataset.location;
-            myLibrary.splice(location, 1);
-
-            parent.remove();
-          });
-        
         booksList.appendChild(bookItem);
     });
 }
 
+const booksList = document.querySelector("#books-list");
 const newBookBtn = document.querySelector("#new-book-btn");
 const addBookBtn = document.querySelector("#add-book-btn");
 const newBookForm = document.querySelector("#new-book-form");
@@ -71,3 +67,22 @@ function getInputtedData() {
 
   return [title, author, pages, read];
 }
+
+booksList.addEventListener("click", event => {
+    if (event.target.nodeName !== "BUTTON") {
+        return;
+    }
+
+    const parent = event.target.parentElement;
+    const location = parent.dataset.location;
+    
+    if (event.target.textContent === "REMOVE") {
+        myLibrary.splice(location, 1);
+        parent.remove();
+    } else {
+        const book = myLibrary[location];
+        book.toggleReadStatus();
+      }
+
+    displayBooks();
+  });
