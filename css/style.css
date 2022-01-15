@@ -7,12 +7,19 @@
 
 body {
     box-sizing: border-box;
+    background-color: #ceffff;
+    font-family: cursive, sans-serif;
     width: 100vw;
     padding: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 48px;
+}
+
+#main-heading {
+    margin: 48px auto;
+    font-size: 48px;
 }
 
 #books-list {
@@ -148,15 +155,15 @@ label {
     width: 36px;
     height: 36px;
     position: absolute;
-    top: -12px;
-    right: -16px;
+    top: -16px;
+    right: -18px;
     cursor: pointer;
 }
 
 #add-book-btn {
     width: 60px;
     height: 60px;
-    position: absolute;
+    position: fixed;
     bottom: 4em;
     right: 4em;
     transition: all 0.3s;
