@@ -1,31 +1,43 @@
-const bookItem = document.querySelector(".book-item");
-const tooltip = bookItem.querySelector(".tooltip");
+const myLibrary = [];
 
-bookItem.addEventListener("mouseover", () => {
-  tooltip.classList.add("active");
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+}
+
+Book.prototype.toggleReadStatus = function() {
+    this.read = !this.read;
+}
+
+function addBookToLibrary(title, author, pages, read) {
+    const book = new Book(title, author, pages, read);
+    myLibrary.push(book);
+}
+
+const bookItems = document.querySelectorAll(".book-item");
+bookItems.forEach(bookItem => {
+    const tooltip = bookItem.querySelector(".tooltip");
+  
+    bookItem.addEventListener("mouseover", () => {
+      tooltip.classList.add("active");
+    });
+  
+    bookItem.addEventListener("mouseout", () => {
+      tooltip.classList.remove("active");
+    })
+
+  });
+
+
+const addBookBtn = document.querySelector("#add-book-btn");
+const newBookForm = document.querySelector("#new-book-form");
+const addBookFormBtn = document.querySelector("#add-book-form-btn");
+
+addBookBtn.addEventListener("click", () => {
+    newBookForm.classList.add("active");
 });
-
-bookItem.addEventListener("mouseout", () => {
-  tooltip.classList.remove("active");
-})
-
-// const myLibrary = [];
-
-// function Book(title, author, pages, read) {
-//     this.title = title;
-//     this.author = author;
-//     this.pages = pages;
-//     this.read = read;
-// }
-
-// Book.prototype.toggleReadStatus = function() {
-//     this.read = !this.read;
-// }
-
-// function addBookToLibrary(title, author, pages, read) {
-//     const book = new Book(title, author, pages, read);
-//     myLibrary.push(book);
-// }
 
 // function displayBooks() {
 //     const booksList = document.querySelector("#books-list");
