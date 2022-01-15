@@ -8,7 +8,6 @@
 body {
     box-sizing: border-box;
     width: 100vw;
-    /* height: 100vh; */
     padding: 48px;
     display: flex;
     flex-direction: column;
@@ -128,8 +127,8 @@ label {
     flex: 1;
 }
 
-#add-book-btn {
-    background-color: rgb(40, 231, 88);
+#add-book-form-btn {
+    background-color: #26c54e;
     font-weight: bold;
     color: white;
     padding: 12px;
@@ -139,6 +138,20 @@ label {
     margin-top: 36px;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+#add-book-form-btn:hover {
+    transform: scale(1.1);
+}
+
+#add-book-btn {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 4em;
+    right: 4em;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 #add-book-btn:hover {
