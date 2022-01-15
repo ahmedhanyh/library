@@ -29,6 +29,7 @@ body {
     height: 300px;
     border-radius: 2px;
     position: relative;
+    display: flex;
 }
 
 .book-side {
@@ -57,9 +58,37 @@ body {
     left: 91%;
     top: -5%;
     cursor: pointer;
+    border-radius: 50%;
 }
 
-button, #add-book-btn {
+.tooltip {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+    /* bottom: -62px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.remove-btn {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: rgba(255, 0, 0, 0.774);
+}
+
+/* button, #add-book-btn {
     background-color: rgb(59, 59, 255);
     border-radius: 2px;
     padding: 8px 12px;
@@ -103,9 +132,4 @@ select {
 
 label {
     flex: 1;
-}
-
-div {
-    margin-bottom: 16px;
-    display: flex;
-}
+} */
