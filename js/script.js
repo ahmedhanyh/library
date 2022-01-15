@@ -34,9 +34,14 @@ bookItems.forEach(bookItem => {
 const addBookBtn = document.querySelector("#add-book-btn");
 const newBookForm = document.querySelector("#new-book-form");
 const addBookFormBtn = document.querySelector("#add-book-form-btn");
+const cancelBtn = document.querySelector("#cancel-btn");
 
 addBookBtn.addEventListener("click", () => {
     newBookForm.classList.add("active");
+});
+
+cancelBtn.addEventListener("click", () => {
+    newBookForm.classList.remove("active");
 });
 
 // function displayBooks() {
