@@ -8,18 +8,128 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="book-item">
-        <div class="book-side"></div>
-        <div class="book-info">
-            <h2 class="book-title">A Brief History of Time</h2>
-            <h3 class="book-author">Stephen Hawking</h3>
+    <h1 id="main-heading">My Library</h1>
+    <ul id="books-list">
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+        <li class="book-item">
+            <div class="book-side"></div>
+            <div class="book-info">
+                <h2 class="book-title">A Brief History of Time</h2>
+                <h3 class="book-author">Stephen Hawking</h3>
+            </div>
+            <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
+            <div class="tooltip">
+                <p>Pages: 300</p>
+                <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+            </div>
+        </li>
+    </ul>
+
+    <form id="new-book-form">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter a book title">
         </div>
-        <img src="./img/Unread.png" alt="Check Circle" class="read-check" />
-        <div class="tooltip">
-            <p>Pages: 300</p>
-            <img src="./img/Delete.svg" alt="Delete Button" class="remove-btn" />
+        <div>
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" placeholder="Enter the author's name">
         </div>
-    </div>
+        <div>
+            <label for="pages">Number of Pages</label>
+            <input type="number" name="pages" id="pages" placeholder="Enter the number of pages">
+        </div>
+        <div>
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="unread" selected>Unread</option>
+                <option value="read">Read</option>
+            </select>
+        </div>
+        <input type="button" value="Add new book", id="add-book-btn">
+    </form>
     
     <script src="./js/script.js"></script>
 </body>

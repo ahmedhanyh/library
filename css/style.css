@@ -8,7 +8,7 @@
 body {
     box-sizing: border-box;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 48px;
     display: flex;
     flex-direction: column;
@@ -19,8 +19,8 @@ body {
 #books-list {
     display: grid;
     grid-template-columns: repeat(4, 200px);
-    grid-auto-rows: 300px;
-    gap: 24px;
+    grid-auto-rows: 362px;
+    gap: 24px 48px;
 }
 
 .book-item {
@@ -89,6 +89,60 @@ body {
 
 .remove-btn:hover {
     background-color: rgba(255, 0, 0, 0.774);
+}
+
+#new-book-form {
+    box-sizing: border-box;
+    background-color: white;
+    width: 50vw;
+    padding: 36px 36px 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(128, 128, 128, 0.5);
+    position: fixed;
+    top: 20%;
+    transform: translateY(-200%);
+    transition: all 0.5s;
+}
+
+#new-book-form.active {
+    transform: translateY(0);
+}
+
+#new-book-form div {
+    margin-bottom: 12px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"], #pages, select {
+    box-sizing: border-box;
+    flex: 3;
+    padding: 4px 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+label {
+    flex: 1;
+}
+
+#add-book-btn {
+    background-color: rgb(40, 231, 88);
+    font-weight: bold;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+    margin-top: 36px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#add-book-btn:hover {
+    transform: scale(1.1);
 }
 
 /* button, #add-book-btn {
