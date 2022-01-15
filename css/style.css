@@ -34,13 +34,11 @@ body {
 
 .book-side {
     background-color: rgb(85, 21, 21);
-    width: 10%;
-    height: 100%;
+    flex: 1;
 }
 
 .book-info {
-    width: 90%;
-    height: 100%;
+    flex: 9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,14 +64,19 @@ body {
     color: white;
     width: 200px;
     height: 50px;
-    border-radius: 8px;
+    border-radius: 4px;
     position: absolute;
     bottom: 0;
-    visibility: hidden;
-    /* bottom: -62px; */
+    opacity: 0;
+    transition: all 0.3s 0.1s;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.tooltip.active {
+    opacity: 1;
+    bottom: -62px;
 }
 
 .remove-btn {
