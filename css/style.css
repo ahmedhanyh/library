@@ -144,6 +144,15 @@ label {
     transform: scale(1.1);
 }
 
+#cancel-btn {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: -12px;
+    right: -16px;
+    cursor: pointer;
+}
+
 #add-book-btn {
     width: 60px;
     height: 60px;
