@@ -126,31 +126,3 @@ booksList.addEventListener("click", event => {
   });
 
 /* End of Event Listeners */
-
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-addBookToLibrary('a', 'a', 23, true);
-displayBooks();
