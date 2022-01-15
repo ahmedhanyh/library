@@ -28,6 +28,7 @@ body {
     width: 200px;
     height: 300px;
     border-radius: 2px;
+    position: relative;
 }
 
 .book-side {
@@ -49,6 +50,13 @@ body {
 .book-title, .book-author {
     text-align: center;
     overflow-wrap: normal;
+}
+
+.read-check {
+    position: absolute;
+    left: 91%;
+    top: -5%;
+    cursor: pointer;
 }
 
 button, #add-book-btn {
