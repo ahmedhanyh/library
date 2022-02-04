@@ -10,20 +10,23 @@ const cancelBtn = document.querySelector("#cancel-btn");
 
 /* End of Global Variables */
 
+/* Book class declaration */
+class Book {
+    
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    
+    toggleReadStatus() {
+        this.read = !this.read;
+    }
+    
+}
+
 /* Functions Declarations */
-
-// This one is a constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-// This one is method defined in the Book object prototype
-Book.prototype.toggleReadStatus = function() {
-    this.read = !this.read;
-}
 
 function addBookToLibrary(title, author, pages, read) {
     const book = new Book(title, author, pages, read);
