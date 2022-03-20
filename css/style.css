@@ -201,10 +201,10 @@ label {
     transform: translateY(0);
 }
 
-input:invalid, #pages:invalid {
-    border-color: red;
+input:invalid, #pages:invalid, #status:invalid {
+    border: 2px solid red;
 }
 
-input:valid, #pages:valid {
-    border-color: green;
+input:valid, #pages:valid, #status:valid {
+    border: 2px solid green;
 }
