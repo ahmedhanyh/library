@@ -8,6 +8,7 @@ const newBookForm = document.querySelector("#new-book-form");
 const addBookFormBtn = document.querySelector("#add-book-form-btn");
 const cancelBtn = document.querySelector("#cancel-btn");
 const allInputFields = document.querySelectorAll("input");
+const statusSelection = document.querySelector("#status");
 const inputErrorMessage = document.querySelector("#input-error-msg");
 
 /* End of Global Variables */
@@ -115,6 +116,10 @@ addBookFormBtn.addEventListener("click", () => {
         };
     }
 
+    if (!statusSelection.checkValidity()) {
+        return;
+    };
+
     const [title, author, pages, read] = getInputtedData();
 
     if (!title || !author || !pages) {
@@ -154,8 +159,15 @@ allInputFields.forEach(inputField => {
     });
 });
 
+statusSelection.addEventListener("change", () => {
+    hideError();
+    statusSelection.checkValidity();
+});
+
 allInputFields.forEach(inputField => {
     inputField.addEventListener("invalid", showError);
 });
+
+statusSelection.addEventListener("invalid", showError);
 
 /* End of Event Listeners */
