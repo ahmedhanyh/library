@@ -7,12 +7,13 @@ const addBookBtn = document.querySelector("#add-book-btn");
 const newBookForm = document.querySelector("#new-book-form");
 const addBookFormBtn = document.querySelector("#add-book-form-btn");
 const cancelBtn = document.querySelector("#cancel-btn");
+const allInputFields = document.querySelectorAll("input");
+const inputErrorMessage = document.querySelector("#input-error-msg");
 
 /* End of Global Variables */
 
 /* Book class declaration */
 class Book {
-    
     constructor(title, author, pages, read) {
         this.title = title;
         this.author = author;
@@ -23,7 +24,6 @@ class Book {
     toggleReadStatus() {
         this.read = !this.read;
     }
-    
 }
 
 /* Functions Declarations */
@@ -71,15 +71,27 @@ function getInputtedData() {
     const author = document.querySelector("#author").value;
     const pages = document.querySelector("#pages").value;
     const status = document.querySelector("#status").value;
-  
-    if (title === '' || author === '' || pages === '') {
-        alert("There is one or more empty fields. All fields must be filled.");
-        return [];
-    }
-
     const read = status === "read" ? true : false;
 
     return [title, author, pages, read];
+}
+
+function showError() {
+    let errorMessage;
+
+    if (this.validity.valueMissing && !this.validity.badInput) {
+         errorMessage = "All fields must be filled out !";
+    } else {
+        errorMessage = "Make sure to use the appropriate input type";
+    }
+    
+    inputErrorMessage.textContent = errorMessage;
+    inputErrorMessage.className = "active";
+}
+
+function hideError() {
+    inputErrorMessage.className = "";
+    inputErrorMessage.textContent = "";
 }
 
 /* End of Functions Declarations */
@@ -93,9 +105,16 @@ addBookBtn.addEventListener("click", () => {
 cancelBtn.addEventListener("click", () => {
     newBookForm.reset();
     newBookForm.classList.remove("active");
+    hideError();
 });
 
 addBookFormBtn.addEventListener("click", () => {
+    for (let field = 0; field < allInputFields.length; field++) {
+        if (!allInputFields[field].checkValidity()) {
+            return;
+        };
+    }
+
     const [title, author, pages, read] = getInputtedData();
 
     if (!title || !author || !pages) {
@@ -127,5 +146,16 @@ booksList.addEventListener("click", event => {
 
     displayBooks();
   });
+
+allInputFields.forEach(inputField => {
+    inputField.addEventListener("input", () => {
+        hideError();
+        inputField.checkValidity();
+    });
+});
+
+allInputFields.forEach(inputField => {
+    inputField.addEventListener("invalid", showError);
+});
 
 /* End of Event Listeners */
